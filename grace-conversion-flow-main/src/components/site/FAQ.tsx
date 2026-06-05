@@ -4,24 +4,24 @@ import { Reveal } from "./motion";
 
 const faqs = [
   {
-    q: "Are your translations accepted in Indian courts?",
-    a: "Yes. Every certified translation we issue carries a sworn translator’s declaration and a Certificate of Accuracy that is accepted by Indian district and high courts, USCIS, UKVI, IRCC, and Schengen embassies. We can issue physical court-stamped copies on request.",
+    q: "Can you handle urgent or same-day translation requests?",
+    a: "Yes, we offer express translation services for urgent matters. Same-day delivery is available for documents under 10–20 pages. Additional charges may apply for rush requests.",
   },
   {
     q: "What are your turnaround times?",
     a: "Standard delivery depends on the page count of your documents and is confirmed when we quote. If you need it faster, our urgent track guarantees delivery within 24 hours — charged at the urgent page rate (₹100/page for translation, ₹35/page for English typing, ₹45/page for Hindi typing). Urgent requests must be confirmed in writing before we begin.",
   },
   {
-    q: "Can we send confidential documents over email?",
-    a: "We strongly recommend our encrypted upload portal. Email attachments are accepted only when explicitly requested and are deleted from inboxes within an hour of intake. AES-256 encrypted transfer is the default.",
+    q: "Do you offer notarization along with translation?",
+    a: "No. We specialize exclusively in translation services and do not provide notarization. We recommend consulting a licensed notary independently if your documents require it.",
   },
   {
-    q: "Do you sign matter-specific NDAs?",
-    a: "Yes. Most engagements begin with our standard NDA, executed within 15 minutes of intake. We are happy to countersign your firm’s NDA, DPA, or MSA for ongoing relationships.",
+    q: "What happens if there's an error in the translation after delivery?",
+    a: "We offer a free revision guarantee. If any inaccuracy is identified post-delivery, we will correct it within 24 hours at no additional cost.",
   },
   {
-    q: "What languages beyond Hindi do you cover?",
-    a: "Hindi ↔ English is our specialization. For litigation matters we also support Bengali, Punjabi, Tamil, Telugu, Marathi, Gujarati, and Urdu through our vetted panel of sworn translators.",
+    q: "What payment methods do you accept?",
+    a: "We accept bank transfers and UPI.",
   },
   {
     q: "How is pricing structured for large document sets?",

@@ -1,4 +1,5 @@
 import { Reveal, RevealGroup, Item, itemVariants } from "./motion";
+import { track } from "@vercel/analytics";
 
 const rates = [
   {
@@ -32,7 +33,7 @@ const rates = [
   {
     service: "Delhi High Court e-Filing",
     detail: "Litigation filing support",
-    standard: "As per case type",
+    standard: "Custom Quote",
     urgent: null,
     unit: null,
   },
@@ -165,6 +166,7 @@ export function Pricing() {
             </div>
             <a
               href="https://wa.me/918368699442?text=Hi%20Lexi%20Lab%2C%20I%20need%20a%20certified%20translation%20quote.%20Please%20get%20in%20touch."
+                  onClick={() => track("whatsapp_click", { source: "nav" })}
                   target="_blank"
                   rel="noopener noreferrer"
               className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-transform hover:-translate-y-px"

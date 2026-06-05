@@ -24,7 +24,7 @@ export function Hero() {
               <span className="relative inline-flex size-2 rounded-full bg-accent" />
             </span>
             <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-accent">
-              Court-Certified · NDA-Protected · 24-48h SLA
+              PRECISION · CONFIDENTIALITY · ON-TIME DELIVERY
             </span>
           </motion.div>
 
@@ -48,10 +48,8 @@ export function Hero() {
             transition={{ duration: 0.7, ease, delay: 0.15 }}
             className="mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-ink-muted sm:text-xl"
           >
-            The single-source laboratory for high-stakes litigation, corporate
-            M&amp;A, immigration filings, and IP discovery. Certified
-            Hindi&nbsp;↔&nbsp;English translations and forensic-grade
-            audio/video transcription — delivered in 24 hours.
+            Professional Hindi ↔ English translation, document typing, transcription, 
+            and litigation support services. We assist advocates, law firms, businesses, media organizations, and individuals with accurate document handling and language services.
           </motion.p>
 
           <motion.div

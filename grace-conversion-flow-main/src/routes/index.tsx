@@ -11,7 +11,7 @@ import { FAQ } from "@/components/site/FAQ";
 import { FinalCTA } from "@/components/site/FinalCTA";
 import { Footer } from "@/components/site/Footer";
 
-const TITLE = "Lexi Translation Lab — Court-certified legal translation";
+const TITLE = "Lexi Translation Lab";
 const DESC =
   "Court-certified Hindi ↔ English legal translation, true-type copies, and forensic audio/video transcription. Binding quote in 15 minutes. 24-hour turnaround.";
 

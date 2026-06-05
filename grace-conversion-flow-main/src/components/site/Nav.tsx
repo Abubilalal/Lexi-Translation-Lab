@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { track } from "@vercel/analytics";
 
 const links = [
   { label: "Solutions", href: "#services" },
@@ -59,6 +60,7 @@ export function Nav() {
           </a>
           <a
             href="https://wa.me/918368699442?text=Hi%20Lexi%20Lab%2C%20I%20need%20a%20certified%20translation%20quote.%20Please%20get%20in%20touch."
+                  onClick={() => track("whatsapp_click", { source: "nav" })}
                   target="_blank"
                   rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-[var(--shadow-elegant)] transition-transform hover:-translate-y-px"

@@ -2,20 +2,20 @@ import { Reveal, RevealGroup, Item, itemVariants } from "./motion";
 
 const pillars = [
   {
-    t: "Encryption",
-    d: "AES-256 at rest, TLS 1.3 in transit. Zero plaintext exposure across the lifecycle.",
+    t: "Accuracy-Focused Review",
+    d: "Documents are reviewed for accuracy, consistency, and clarity to help ensure the final translation reflects the intent and meaning of the source material.",
   },
   {
-    t: "NDA-first intake",
-    d: "Matter-specific NDAs executed before any document is opened. Standard in every engagement.",
+    t: "Transparent Communication",
+    d: "From project inquiry to delivery, we maintain clear communication regarding scope, timelines, and requirements so there are no surprises along the way.",
   },
   {
-    t: "Data sovereignty",
-    d: "GDPR + DPDP compliant. Local-node processing for EU and Indian counsel on request.",
+    t: "Practical Turnaround Timelines",
+    d: "Delivery schedules are planned according to document complexity and volume, helping clients receive quality work within realistic timeframes.",
   },
   {
-    t: "Retention control",
-    d: "Custom purge cycles per matter. Verified deletion certificates issued on close.",
+    t: "Confidential Handling",
+    d: "Client documents are treated with discretion and shared only with personnel involved in the project. We take reasonable measures to protect information throughout the translation process.",
   },
 ];
 
@@ -65,7 +65,7 @@ export function Security() {
 
         <Reveal delay={0.1}>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 border-t border-primary-foreground/15 pt-10 opacity-80">
-            {["ISO 17100", "ISO 27001", "SOC 2 Type II", "GDPR · DPDP", "ATA Verified"].map(
+            {["Legal Documents", "Business Documents", "Academic Records", "Technical Content", "General Translation"].map(
               (b) => (
                 <span
                   key={b}

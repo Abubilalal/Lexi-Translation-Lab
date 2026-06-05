@@ -3,20 +3,20 @@ import { Reveal, RevealGroup, Item, itemVariants } from "./motion";
 const steps = [
   {
     n: "1",
-    title: "Secure Upload",
-    desc: "Drop documents into our encrypted portal. AES-256 in transit and at rest, no email attachments.",
+    title: "Submit Documents",
+    desc: "Share your files via email or WhatsApp.",
     
   },
   {
     n: "2",
-    title: "Scope & NDA",
-    desc: "Conflict check, matter-specific NDA execution, and a binding fee + turnaround quote.",
+    title: "Review & Quote",
+    desc: "We review the files and provide pricing and delivery timelines.",
     
   },
   {
     n: "3",
-    title: "Translate & Certify",
-    desc: "Two sworn linguists translate and cross-review. Certificate of Accuracy issued and notarized.",
+    title: "Translation / Processing",
+    desc: "Translation, typing, transcription, or filing assistance is completed.",
     
   },
   {
@@ -52,7 +52,7 @@ export function Process() {
                     {s.n}
                   </div>
                   <span className="font-mono text-[10px] font-semibold uppercase tracking-widest tabular text-accent">
-                    {s.time}
+                    
                   </span>
                 </div>
                 <h4 className="mb-2 text-base font-semibold text-foreground">

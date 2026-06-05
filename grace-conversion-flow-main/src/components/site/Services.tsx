@@ -4,11 +4,11 @@ const services = [
   {
     n: "01",
     title: "Document Translation",
-    desc: "Court-admissible Hindi ↔ English translation of contracts, affidavits, depositions, patents, and evidentiary records. Delivered with a signed Certificate of Accuracy.",
+    desc: "Hindi ↔ English translation for legal notices, agreements, affidavits, contracts, business correspondence, and general documents.",
     bullets: [
-      "Dual-column bilingual delivery",
-      "Notarized + sworn translator signature",
-      "Accepted by Indian courts",
+      "Legal & corporate documents",
+      "Human-reviewed translations",
+      "Word & PDF delivery",
     ],
     meta: "₹60 / page",
     metaLabel: "Hindi ↔ English · ₹100/page urgent (24-48 hr)",
@@ -16,10 +16,11 @@ const services = [
   {
     n: "02",
     title: "True-Type",
-    desc: "Officially certified true-type translations for immigration filings, academic credentials, visa applications, and government submissions worldwide.",
+    desc: "Typing and formatting of handwritten, scanned, and printed documents in Hindi and English.",
     bullets: [
-      "USCIS, IRCC, UKVI, Schengen accepted",
-      "Standard or 24-48 hour urgent delivery",
+      "Hindi & English typing",
+      "Clean formatting",
+      "Editable Word files",
     ],
     meta: "From ₹20 / page",
     metaLabel: "English ₹20 · Hindi ₹30 per page",
@@ -27,11 +28,11 @@ const services = [
   {
     n: "03",
     title: "Audio & Video Transcription",
-    desc: "Timestamped, multi-speaker legal transcription of recorded statements, depositions, surveillance, and court proceedings — formatted for e-discovery platforms.",
+    desc: "Conversion of Hindi and English recordings into editable text documents",
     bullets: [
-      "Speaker diarization + verbatim mode",
-      "Relativity-ready .VTT / .PDF ",
-      "Chain-of-custody preserved",
+      "Hindi & English audio",
+      "Optional timestamps",
+      "Word & PDF output",
     ],
     meta: "₹100 / audio minute",
     metaLabel: "Hindi · English · code-switched",

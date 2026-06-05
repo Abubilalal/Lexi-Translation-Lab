@@ -1,4 +1,5 @@
 import { Reveal } from "./motion";
+import { track } from "@vercel/analytics";
 
 export function FinalCTA() {
   return (
@@ -17,15 +18,14 @@ export function FinalCTA() {
                   .
                 </h2>
                 <p className="mt-5 max-w-md text-base leading-relaxed text-ink-muted">
-                  Upload your documents and receive a fixed fee, a turnaround
-                  commitment, and an executed NDA — before any work begins.
+                  Send your documents via WhatsApp or email. We will review the files and provide pricing and estimated delivery timelines.
                 </p>
                 <ul className="mt-8 space-y-3">
                   {[
-                    "Reply within 15 minutes, 24/7",
-                    "Binding fee · no surprise charges",
-                    "NDA + DPA on file from day one",
-                    "Court-admissible in 80+ jurisdictions",
+                    "Quick response",
+                    "Transparent pricing",
+                    "Hindi ↔ English services",
+                    "Digital delivery",
                   ].map((b) => (
                     <li
                       key={b}
@@ -63,6 +63,7 @@ export function FinalCTA() {
                 </div>
                 <a
                   href="https://wa.me/918368699442?text=Hi%20Lexi%20Lab%2C%20I%20need%20a%20certified%20translation%20quote.%20Please%20get%20in%20touch."
+                  onClick={() => track("whatsapp_click", { source: "final_cta" })}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 rounded-xl bg-[#25D366] px-8 py-4 text-base font-semibold text-white shadow-[var(--shadow-elegant)] transition-transform hover:-translate-y-px"
