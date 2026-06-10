@@ -7,6 +7,12 @@ const firms = [
   { name: "Tatvam & Associates",     style: "font-bold tracking-[0.2em] text-sm" },
   { name: "Chandrawat Chambers",          style: "font-semibold tracking-tight text-xl" },
   { name: "Stratham Legal Group",        style: "font-serif-italic text-2xl" },
+  { name: "Mehta & Associates",  style: "font-serif-italic text-2xl" },
+  { name: "Kesari Partners",   style: "font-semibold tracking-[0.18em] text-sm" },
+  { name: "Veressa Law",      style: "font-serif-italic text-2xl" },
+  { name: "Tatvam & Associates",     style: "font-bold tracking-[0.2em] text-sm" },
+  { name: "Chandrawat Chambers",          style: "font-semibold tracking-tight text-xl" },
+  { name: "Stratham Legal Group",        style: "font-serif-italic text-2xl" },
 ];
 
 // duplicate for seamless loop
