@@ -40,7 +40,7 @@ export function LogoWall() {
     <section className="border-y border-border bg-surface-muted/60 py-12 overflow-hidden">
       <div className="mx-auto max-w-7xl px-6">
         <p className="mb-8 text-center font-mono text-[10px] font-bold uppercase tracking-[0.22em] text-ink-muted">
-          Trusted by counsel across 24 jurisdictions
+          TRUSTED BY LEADING COUNSEL & LAW FIRMS
         </p>
       </div>
 
