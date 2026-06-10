@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { Reveal, RevealGroup, Item, itemVariants } from "./motion";
 import { ReviewModal, type Review } from "./ReviewModal";
+import { getReviews, submitReview } from "@/lib/api/reviews.functions";
 
 const metrics = [
   { v: "3000+", k: "Legal Documents Delivered" },
@@ -9,7 +11,8 @@ const metrics = [
   { v: "92%",   k: "Repeat engagement" },
 ];
 
-const initialQuotes: Review[] = [
+// Shown while reviews load, or if the table is empty / DB unreachable.
+const fallbackQuotes: Review[] = [
   {
     name: "Arjun Mehta",
     title: "Senior Partner · Mehta & Associates",
@@ -23,12 +26,27 @@ const initialQuotes: Review[] = [
 ];
 
 export function Proof() {
-  const [quotes, setQuotes] = useState(initialQuotes);
   const [showModal, setShowModal] = useState(false);
+  const queryClient = useQueryClient();
+
+  const { data } = useQuery({
+    queryKey: ["reviews"],
+    queryFn: () => getReviews(),
+  });
+
+  const quotes = data && data.length > 0 ? data : fallbackQuotes;
+
+  const mutation = useMutation({
+    mutationFn: (r: Review) => submitReview({ data: r }),
+    onSuccess: () => {
+      // New reviews are pending approval, so they won't show until approved.
+      queryClient.invalidateQueries({ queryKey: ["reviews"] });
+    },
+  });
 
   const handleSubmit = (r: Review) => {
-    setQuotes((q) => [...q, r]); // adds instantly — swap for API call if needed
-    setShowModal(false);
+    mutation.mutate(r);
+    // The modal shows its own "submitted for approval" screen and closes itself.
   };
 
   return (
