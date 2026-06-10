@@ -5,7 +5,7 @@ const ease = [0.16, 1, 0.3, 1] as const;
 const trust = [
   { k: "Turnaround", v: "24-48h Priority", emphasize: true },
   { k: "Accuracy", v: "99.98% Audit" },
-  { k: "Protection", v: "NDA Covered" },
+  { k: "Protection", v: "100% Confidential" },
 ];
 
 export function Hero() {

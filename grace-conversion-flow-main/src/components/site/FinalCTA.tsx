@@ -41,10 +41,10 @@ export function FinalCTA() {
                 <div className="mt-10 border-t border-border pt-6">
                   <p className="micro-label">Prefer to talk?</p>
                   <a
-                    href="mailto:info@lexitranslationlab.site"
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=info@lexilab.in" target="_blank" rel="noopener noreferrer"
                     className="mt-2 block text-base font-semibold text-foreground hover:text-accent"
                   >
-                    info@lexitranslationlab.site
+                    info@lexilab.in
                   </a>
                   <p className="mt-1 text-sm text-ink-muted">
                     +91 83686 99442 · WhatsApp 24/7
@@ -75,8 +75,8 @@ export function FinalCTA() {
                 </a>
                 <p className="text-xs text-ink-muted text-center">
                   Or email us at{" "}
-                  <a href="mailto:info@lexitranslationlab.site" className="font-medium text-foreground hover:text-accent">
-                    info@lexitranslationlab.site
+                  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=info@lexilab.in" target="_blank" rel="noopener noreferrer" className="font-medium text-foreground hover:text-accent">
+                    info@lexilab.in
                   </a>
                 </p>
               </div>

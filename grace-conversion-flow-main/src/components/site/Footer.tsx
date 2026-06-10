@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 const cols = [
   {
     t: "Solutions",
@@ -44,12 +45,11 @@ export function Footer() {
             <p className="mt-6 font-mono text-[11px] uppercase tracking-widest text-ink-muted">
               New Delhi · Remote, 24/7
             </p>
-		<a
-  href="mailto:info@lexitranslationlab.site"
-  className="mt-2 block text-base tracking-tight text-foreground hover:text-accent normal-case"
->
-  info@lexitranslationlab.site
-</a>
+		        <a
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=info@lexilab.in" target="_blank" rel="noopener noreferrer"
+              className="mt-2 block text-base tracking-tight text-foreground hover:text-accent normal-case">
+              info@lexilab.in
+            </a>
                   <p className="mt-1 text-sm text-ink-muted">
                     +91 83686 99442 · WhatsApp 24/7
                   </p>
@@ -91,11 +91,9 @@ export function Footer() {
             reserved.
           </p>
           <div className="flex flex-wrap items-center gap-6 font-mono text-[10px] font-bold uppercase tracking-[0.18em] text-ink-muted">
-            <a href="#" className="hover:text-foreground">Privacy</a>
-            <a href="#" className="hover:text-foreground">Terms</a>
-            <a href="#" className="hover:text-foreground">DPA</a>
-            <a href="#" className="hover:text-foreground">Security</a>
-            <a href="#" className="hover:text-foreground">SLA</a>
+            <Link to="/privacy" className="hover:text-foreground">Privacy</Link>
+            <Link to="/terms" className="hover:text-foreground">Terms</Link>
+            <Link to="/sla" className="hover:text-foreground">SLA</Link>
           </div>
         </div>
       </div>

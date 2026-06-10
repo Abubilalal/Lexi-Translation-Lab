@@ -10,6 +10,7 @@ import { Security } from "@/components/site/Security";
 import { FAQ } from "@/components/site/FAQ";
 import { FinalCTA } from "@/components/site/FinalCTA";
 import { Footer } from "@/components/site/Footer";
+import { TitleTyper } from "@/components/site/TitleTyper";
 
 const TITLE = "Lexi Translation Lab";
 const DESC =
@@ -34,6 +35,7 @@ function Index() {
     <div className="min-h-screen bg-background text-foreground">
       <Nav />
       <main>
+        <TitleTyper />
         <Hero />
         <LogoWall />
         <Services />

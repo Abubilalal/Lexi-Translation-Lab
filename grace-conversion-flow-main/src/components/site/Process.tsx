@@ -22,7 +22,7 @@ const steps = [
   {
     n: "4",
     title: "Deliver",
-    desc: "Digital delivery with signed certificate. Court-stamped physical copies couriered on request.",
+    desc: "Completed files are delivered digitally in the requested format.",
     
   },
 ];
