@@ -32,7 +32,7 @@ export function ReviewModal({ onClose, onSubmit }: Props) {
             <div className="font-serif-italic mb-3 text-5xl text-accent">"</div>
             <p className="text-lg font-semibold text-foreground">Thank you!</p>
             <p className="mt-1 text-sm text-ink-muted">
-              Your review has been submitted for approval.
+              Your review is now live on the page.
             </p>
             <button
               onClick={onClose}

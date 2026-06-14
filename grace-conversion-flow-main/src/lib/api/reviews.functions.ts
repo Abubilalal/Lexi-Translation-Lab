@@ -5,7 +5,10 @@ import { getSql } from "../db.server";
 
 export type Review = { name: string; title: string; review: string };
 
-// Returns only approved reviews, newest first. Runs server-side only.
+// Returns reviews, newest first. New reviews are inserted as approved=true
+// below, so they appear here immediately — no moderation wait.
+// (The `approved` column is kept so you can still hide a bad review later
+//  by flipping it to false directly in the DB.)
 export const getReviews = createServerFn({ method: "GET" }).handler(async () => {
   const sql = getSql();
   const rows = await sql`
@@ -17,7 +20,7 @@ export const getReviews = createServerFn({ method: "GET" }).handler(async () => 
   return rows as Review[];
 });
 
-// Inserts a new review as NOT approved (pending moderation).
+// Inserts a new review as APPROVED (goes live instantly) and returns it.
 export const submitReview = createServerFn({ method: "POST" })
   .inputValidator(
     z.object({
@@ -28,9 +31,10 @@ export const submitReview = createServerFn({ method: "POST" })
   )
   .handler(async ({ data }) => {
     const sql = getSql();
-    await sql`
+    const [row] = await sql`
       insert into reviews (name, title, review, approved)
-      values (${data.name}, ${data.title}, ${data.review}, false)
+      values (${data.name}, ${data.title}, ${data.review}, true)
+      returning name, title, review
     `;
-    return { ok: true };
+    return row as Review;
   });
