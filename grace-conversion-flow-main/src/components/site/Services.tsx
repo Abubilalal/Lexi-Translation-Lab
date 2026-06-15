@@ -64,12 +64,12 @@ export function Services() {
           </div>
         </Reveal>
 
-        <RevealGroup className="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <RevealGroup className="-mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-4 scroll-px-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:mx-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible md:px-0 md:pb-0">
           {services.map((s) => (
             <Item
               key={s.n}
               variants={itemVariants}
-              className="group flex flex-col rounded-2xl border border-border bg-surface p-8 shadow-[var(--shadow-ring)] transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]"
+              className="group flex min-w-[85%] snap-start flex-col rounded-2xl border border-border bg-surface p-8 shadow-[var(--shadow-ring)] transition-all hover:-translate-y-1 hover:shadow-[var(--shadow-lift)] md:min-w-0"
             >
               <div className="mb-8 flex items-center justify-between">
                 <span className="grid size-11 place-items-center rounded-lg bg-secondary font-mono text-xs font-semibold text-foreground">
