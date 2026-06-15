@@ -1,33 +1,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Reveal } from "./motion";
-
-const faqs = [
-  {
-    q: "Can you handle urgent or same-day translation requests?",
-    a: "Yes, we offer express translation services for urgent matters. Same-day delivery is available for documents under 10–20 pages. Additional charges may apply for rush requests.",
-  },
-  {
-    q: "What are your turnaround times?",
-    a: "Standard delivery depends on the page count of your documents and is confirmed when we quote. If you need it faster, our urgent track guarantees delivery within 24 hours — charged at the urgent page rate (₹100/page for translation, ₹35/page for English typing, ₹45/page for Hindi typing). Urgent requests must be confirmed in writing before we begin.",
-  },
-  {
-    q: "Do you offer notarization along with translation?",
-    a: "No. We specialize exclusively in translation services and do not provide notarization. We recommend consulting a licensed notary independently if your documents require it.",
-  },
-  {
-    q: "What happens if there's an error in the translation after delivery?",
-    a: "We offer a free revision guarantee. If any inaccuracy is identified post-delivery, we will correct it within 24 hours at no additional cost.",
-  },
-  {
-    q: "What payment methods do you accept?",
-    a: "We accept bank transfers and UPI.",
-  },
-  {
-    q: "How is pricing structured for large document sets?",
-    a: "Everything is billed per output page, never per word. Translation is ₹60/page (₹100/page urgent), English typing ₹20/page, and Hindi typing ₹30/page. Audio transcription is ₹100 per minute, and Delhi High Court e-filing is quoted as per case type. Because we charge on output pages, a 10-page Hindi document that runs to 14 pages once translated is billed at 14 pages — and you receive a binding fee schedule before work begins.",
-  },
-];
+import { faqs } from "@/lib/seo";
 
 function Row({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);

@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { SITE_NAME, OG_IMAGE, localBusinessJsonLd } from "../lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -84,6 +85,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Court-certified legal translation, true-type copies, and forensic audio/video transcription for counsel operating across borders.",
       },
       { name: "author", content: "Lexi Translation Lab" },
+      // Site-wide social defaults (individual routes can override title/description).
+      { property: "og:site_name", content: SITE_NAME },
+      { property: "og:image", content: OG_IMAGE },
+      { property: "og:locale", content: "en_IN" },
+      { name: "twitter:image", content: OG_IMAGE },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify(localBusinessJsonLd()),
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
