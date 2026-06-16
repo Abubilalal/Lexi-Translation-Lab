@@ -1,15 +1,3 @@
-/**
- * Central SEO config — edit the values in this file ONCE and every page,
- * the sitemap, robots.txt reference, and structured data update together.
- *
- * ⚠️  BEFORE GOING LIVE, replace the placeholders below:
- *   - SITE_URL ............ your real domain, no trailing slash
- *   - BUSINESS.telephone .. your public phone number (or remove the field)
- *   - BUSINESS.address .... your registered address (or remove the field)
- *   - OG_IMAGE ............ ideally a 1200×630 image; falls back to the logo
- */
-
-// No trailing slash. e.g. "https://lexitranslationlab.com"
 export const SITE_URL = "https://lexilab.in";
 
 export const SITE_NAME = "Lexi Translation Lab";
@@ -65,18 +53,18 @@ export function localBusinessJsonLd() {
     image: OG_IMAGE,
     description:
       "Court-certified Hindi ↔ English legal translation, true-type copies, and forensic audio/video transcription for counsel operating across borders.",
-    priceRange: "₹₹",
+    priceRange: "₹₹60-100",
     areaServed: { "@type": "Country", name: "India" },
     // TODO: fill these in (or delete the line) before launch:
-    // telephone: "+91-XXXXXXXXXX",
-    // address: {
-    //   "@type": "PostalAddress",
-    //   streetAddress: "REPLACE_ME",
-    //   addressLocality: "REPLACE_ME",
-    //   addressRegion: "REPLACE_ME",
-    //   postalCode: "REPLACE_ME",
-    //   addressCountry: "IN",
-    // },
+    telephone: "+91-8368699442",
+    address: {
+    "@type": "PostalAddress",
+    streetAddress: "Safdarjung Development Area",
+    addressLocality: "New Delhi",
+    addressRegion: "Delhi",
+    postalCode: "110016",
+    addressCountry: "IN",
+  },
     knowsLanguage: ["en", "hi"],
     serviceType: [
       "Legal translation",
