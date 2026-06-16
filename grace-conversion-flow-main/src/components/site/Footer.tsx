@@ -3,10 +3,10 @@ const cols = [
   {
     t: "Solutions",
     links: [
-      "Certified translation",
-      "True-type copies",
-      "AV transcription",
-      "Court interpretation",
+      "Document Translation",
+      "Document True Type",
+      "Audio Transcription",
+      "DHC e-Filing",
     ],
   },
   {
