@@ -16,26 +16,7 @@ const metrics = [
 // A 2-up looping carousel needs ~4 slides to loop smoothly, so the fallback
 // is padded out; real DB reviews replace these as soon as they load.
 const fallbackQuotes: Review[] = [
-  {
-    name: "Arjun Mehta",
-    title: "Senior Partner · Mehta & Associates",
-    review: "Lexi has become our default partner for cross-border arbitration. The speed on Hindi-language discovery is unmatched, and the certification holds up in every jurisdiction we've filed in.",
-  },
-  {
-    name: "Sarah Jenkins",
-    title: "General Counsel · Crestline Global",
-    review: "The cryptographic verification on every certificate gives us the confidence we need when presenting evidence in high-stakes IP litigation. We've stopped using anyone else.",
-  },
-  {
-    name: "Arjun Mehta",
-    title: "Senior Partner · Mehta & Associates",
-    review: "Lexi has become our default partner for cross-border arbitration. The speed on Hindi-language discovery is unmatched, and the certification holds up in every jurisdiction we've filed in.",
-  },
-  {
-    name: "Sarah Jenkins",
-    title: "General Counsel · Crestline Global",
-    review: "The cryptographic verification on every certificate gives us the confidence we need when presenting evidence in high-stakes IP litigation. We've stopped using anyone else.",
-  },
+  
 ];
 
 const MAX_DOTS = 5;

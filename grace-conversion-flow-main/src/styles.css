@@ -207,3 +207,7 @@
 .animate-fade-up {
   animation: fade-up 600ms var(--ease-out-expo) both;
 }
+.max-w-site { max-width: 80rem; }                    /* 1280px */
+@media (min-width: 1536px) { .max-w-site { max-width: 90rem; } }   /* 1440px */
+@media (min-width: 1920px) { .max-w-site { max-width: 105rem; } }  /* 1680px */
+@media (min-width: 2560px) { .max-w-site { max-width: 120rem; } }  /* 1920px */
