@@ -12,7 +12,7 @@ const industries = [
 export function Industries() {
   return (
     <section id="industries" className="py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-site px-6">
         <Reveal>
           <div className="mb-14 grid gap-6 md:grid-cols-2 md:items-end">
             <div>

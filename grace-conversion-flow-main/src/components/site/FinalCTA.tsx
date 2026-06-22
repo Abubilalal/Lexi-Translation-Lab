@@ -4,7 +4,7 @@ import { track } from "@vercel/analytics";
 export function FinalCTA() {
   return (
     <section id="quote" className="bg-surface-muted/60 py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-site px-6">
         <Reveal>
           <div className="overflow-hidden rounded-3xl bg-surface shadow-[var(--shadow-lift)] ring-1 ring-border">
             <div className="grid grid-cols-1 lg:grid-cols-2">

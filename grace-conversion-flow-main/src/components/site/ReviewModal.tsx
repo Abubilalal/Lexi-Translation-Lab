@@ -1,19 +1,35 @@
 import { useState } from "react";
 
-type Props = { onClose: () => void; onSubmit: (r: Review) => void };
+// What gets shown in the carousel (no email — email is never displayed).
 export type Review = { name: string; title: string; review: string };
+// What the form collects + submits (includes email).
+export type ReviewInput = Review & { email: string };
+
+type Props = { onClose: () => void; onSubmit: (r: ReviewInput) => void };
+
+// Same shape the server validates with. Keep in sync with submitReview's zod schema.
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export function ReviewModal({ onClose, onSubmit }: Props) {
-  const [form, setForm] = useState<Review>({ name: "", title: "", review: "" });
+  const [form, setForm] = useState<ReviewInput>({ name: "", title: "", review: "", email: "" });
+  const [emailError, setEmailError] = useState("");
   const [done, setDone] = useState(false);
 
-  const handle = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
-    setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
+  const handle = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setForm((f) => ({ ...f, [name]: value }));
+    if (name === "email" && emailError) setEmailError(""); // clear error as they fix it
+  };
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
+    const email = form.email.trim();
     if (!form.name || !form.review) return;
-    onSubmit(form);
+    if (!EMAIL_RE.test(email)) {
+      setEmailError("Please enter a valid email address.");
+      return;
+    }
+    onSubmit({ ...form, email });
     setDone(true);
   };
 
@@ -47,7 +63,7 @@ export function ReviewModal({ onClose, onSubmit }: Props) {
               <h3 className="text-lg font-semibold text-foreground">Leave a review</h3>
               <button onClick={onClose} className="text-ink-muted hover:text-foreground text-xl">✕</button>
             </div>
-            <form onSubmit={submit} className="flex flex-col gap-4">
+            <form onSubmit={submit} className="flex flex-col gap-4" noValidate>
               <div className="grid grid-cols-2 gap-4">
                 <div className="flex flex-col gap-1.5">
                   <label className="micro-label">Your name *</label>
@@ -65,6 +81,23 @@ export function ReviewModal({ onClose, onSubmit }: Props) {
                     className="rounded-lg border border-border bg-background px-3 py-2.5 text-sm text-foreground outline-none focus:border-accent"
                   />
                 </div>
+              </div>
+              <div className="flex flex-col gap-1.5">
+                <label className="micro-label">Your email *</label>
+                <input
+                  type="email" name="email" value={form.email} onChange={handle} required
+                  autoComplete="email" inputMode="email"
+                  placeholder="arjun@mehta-associates.in"
+                  aria-invalid={!!emailError}
+                  className={`rounded-lg border bg-background px-3 py-2.5 text-sm text-foreground outline-none focus:border-accent ${
+                    emailError ? "border-red-500 focus:border-red-500" : "border-border"
+                  }`}
+                />
+                {emailError ? (
+                  <span className="text-xs text-red-500">{emailError}</span>
+                ) : (
+                  <span className="text-xs text-ink-muted">Not shown publicly — used only to verify your review.</span>
+                )}
               </div>
               <div className="flex flex-col gap-1.5">
                 <label className="micro-label">Your review *</label>

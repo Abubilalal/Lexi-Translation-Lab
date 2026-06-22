@@ -11,7 +11,7 @@ const trust = [
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden bg-mesh">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 px-6 pt-16 pb-24 lg:pt-24 lg:pb-32">
+      <div className="mx-auto grid max-w-site grid-cols-1 items-center gap-16 px-6 pt-16 pb-24 lg:pt-24 lg:pb-32">
         <div>
           <motion.div
             initial={{ opacity: 0, y: 8 }}

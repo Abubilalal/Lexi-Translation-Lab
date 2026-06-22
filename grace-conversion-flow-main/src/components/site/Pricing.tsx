@@ -51,7 +51,7 @@ export function Pricing() {
       id="pricing"
       className="border-y border-border bg-surface-muted/50 py-24 sm:py-32"
     >
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-site px-6">
         <Reveal>
           <div className="mb-16 max-w-5xl">
             <p className="micro-label mb-3">Transparent pricing</p>

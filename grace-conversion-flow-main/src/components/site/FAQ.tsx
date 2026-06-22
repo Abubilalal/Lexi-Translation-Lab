@@ -47,7 +47,7 @@ function Row({ q, a }: { q: string; a: string }) {
 export function FAQ() {
   return (
     <section id="faq" className="py-24 sm:py-32">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-6 lg:grid-cols-12">
+      <div className="mx-auto grid max-w-site grid-cols-1 gap-12 px-6 lg:grid-cols-12">
         <Reveal className="lg:col-span-4">
           <p className="micro-label mb-3">Frequently asked</p>
           <h2 className="text-balance text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">

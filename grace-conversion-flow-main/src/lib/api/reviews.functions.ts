@@ -21,19 +21,22 @@ export const getReviews = createServerFn({ method: "GET" }).handler(async () => 
 });
 
 // Inserts a new review as APPROVED (goes live instantly) and returns it.
+// NOTE: `email` is collected and stored, but is deliberately NOT returned here
+// (and not selected in getReviews), so it never reaches the browser/UI.
 export const submitReview = createServerFn({ method: "POST" })
   .inputValidator(
     z.object({
       name: z.string().min(1).max(120),
       title: z.string().max(160).optional().default(""),
       review: z.string().min(1).max(2000),
+      email: z.string().trim().email("Enter a valid email address").max(254),
     }),
   )
   .handler(async ({ data }) => {
     const sql = getSql();
     const [row] = await sql`
-      insert into reviews (name, title, review, approved)
-      values (${data.name}, ${data.title}, ${data.review}, true)
+      insert into reviews (name, title, review, email, approved)
+      values (${data.name}, ${data.title}, ${data.review}, ${data.email}, true)
       returning name, title, review
     `;
     return row as Review;

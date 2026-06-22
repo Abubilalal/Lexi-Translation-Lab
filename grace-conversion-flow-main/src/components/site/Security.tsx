@@ -22,7 +22,7 @@ const pillars = [
 export function Security() {
   return (
     <section id="security" className="bg-primary py-24 text-primary-foreground sm:py-32">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-site px-6">
         <Reveal>
           <div className="mb-16 grid gap-8 md:grid-cols-2 md:items-end">
             <div>

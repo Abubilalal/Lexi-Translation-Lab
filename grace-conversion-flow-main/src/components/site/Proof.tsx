@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import useEmblaCarousel from "embla-carousel-react";
 import { Reveal, RevealGroup, Item, itemVariants } from "./motion";
-import { ReviewModal, type Review } from "./ReviewModal";
+import { ReviewModal, type Review, type ReviewInput } from "./ReviewModal";
 import { getReviews, submitReview } from "@/lib/api/reviews.functions";
 
 const metrics = [
@@ -35,13 +35,15 @@ export function Proof() {
   const quotes = data && data.length > 0 ? data : fallbackQuotes;
 
   const mutation = useMutation({
-    mutationFn: (r: Review) => submitReview({ data: r }),
+    mutationFn: (r: ReviewInput) => submitReview({ data: r }),
     // Optimistically show the new review right away — it's already live server-side.
-    onMutate: async (r: Review) => {
+    onMutate: async (r: ReviewInput) => {
       await queryClient.cancelQueries({ queryKey: ["reviews"] });
       const prev = queryClient.getQueryData<Review[]>(["reviews"]);
+      // Strip email before caching — the UI only ever shows name/title/review.
+      const { email: _email, ...display } = r;
       queryClient.setQueryData<Review[]>(["reviews"], (old) =>
-        old && old.length > 0 ? [r, ...old] : [r],
+        old && old.length > 0 ? [display, ...old] : [display],
       );
       return { prev };
     },
@@ -53,7 +55,7 @@ export function Proof() {
     },
   });
 
-  const handleSubmit = (r: Review) => {
+  const handleSubmit = (r: ReviewInput) => {
     mutation.mutate(r);
     setShowModal(false);
   };
