@@ -27,7 +27,7 @@ const rates = [
     service: "Audio Transcription",
     detail: "Verbatim · timestamped",
     standard: "₹100",
-    urgent: 120,
+    urgent: "₹120",
     unit: "per minute",
   },
   {
@@ -72,7 +72,7 @@ export function Pricing() {
 
         <Reveal>
           <div className="overflow-hidden rounded-2xl bg-surface ring-1 ring-border shadow-[var(--shadow-ring)]">
-            {/* Header row */}
+            {/* Header row — desktop (>= 640px) */}
             <div className="hidden grid-cols-12 gap-4 border-b border-border bg-secondary/50 px-7 py-4 sm:grid">
               <div className="col-span-6 micro-label">Service</div>
               <div className="col-span-3 micro-label text-right">Standard</div>
@@ -81,63 +81,114 @@ export function Pricing() {
               </div>
             </div>
 
+            {/* Header row — mobile (< 640px) */}
+            <div className="flex items-center gap-2.5 border-b border-border bg-secondary/50 px-5 py-3 sm:hidden">
+              <div className="min-w-0 flex-1 micro-label">Service</div>
+              <div className="w-16 shrink-0 text-right micro-label">Std</div>
+              <div className="w-16 shrink-0 text-right micro-label">Urgent 24-48 hr</div>
+            </div>
+
             <RevealGroup>
               {rates.map((r) => (
                 <Item
                   key={r.service + r.detail}
                   variants={itemVariants}
-                  className="grid grid-cols-1 gap-4 border-b border-border px-7 py-5 last:border-b-0 transition-colors hover:bg-secondary/30 sm:grid-cols-12 sm:items-center"
+                  className="border-b border-border last:border-b-0 transition-colors hover:bg-secondary/30"
                 >
-                  <div className="sm:col-span-6">
-                    <div className="font-semibold text-foreground">
-                      {r.service}
+                  {/* Row — mobile (< 640px): compact 3-column table */}
+                  <div className="flex items-center gap-2.5 px-5 py-4 sm:hidden">
+                    <div className="min-w-0 flex-1">
+                      <div className="font-semibold leading-snug text-foreground">
+                        {r.service}
+                      </div>
+                      <div className="mt-0.5 text-sm text-ink-muted">
+                        {r.detail}
+                      </div>
                     </div>
-                    <div className="mt-0.5 text-sm text-ink-muted">
-                      {r.detail}
-                    </div>
-                  </div>
 
-                  <div className="flex items-baseline justify-between sm:col-span-3 sm:block sm:text-right">
-                    <span className="text-xs text-ink-muted sm:hidden">
-                      Standard
-                    </span>
-                    <span>
-                      <span className="text-xl font-semibold tabular text-foreground">
-                        {r.standard}
-                      </span>
-                      {r.unit && (
-                        <span className="ml-1 text-xs text-ink-muted">
-                          {r.unit}
+                    <div className="w-16 shrink-0 text-right">
+                      {r.standard.startsWith("₹") ? (
+                        <span className="text-base font-semibold tabular text-accent">
+                          {r.standard}
+                        </span>
+                      ) : (
+                        <span className="text-xs font-medium text-foreground">
+                          {r.standard}
                         </span>
                       )}
-                    </span>
-                  </div>
+                    </div>
 
-                  <div className="flex items-baseline justify-between sm:col-span-3 sm:block sm:text-right">
-                    <span className="text-xs text-ink-muted sm:hidden">
-                      Urgent · 24-hr
-                    </span>
-                    {r.urgent ? (
-                      <span>
-                        <span className="text-xl font-semibold tabular text-accent">
+                    <div className="w-16 shrink-0 text-right">
+                      {r.urgent ? (
+                        <span className="text-base font-semibold tabular text-foreground">
                           {r.urgent}
                         </span>
-                        <span className="ml-1 text-xs text-ink-muted">
-                          {r.unit}
+                      ) : (
+                        <span className="text-ink-muted">—</span>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Row — desktop (>= 640px): unchanged 12-column grid */}
+                  <div className="hidden grid-cols-12 gap-4 px-7 py-5 sm:grid sm:items-center">
+                    <div className="sm:col-span-6">
+                      <div className="font-semibold text-foreground">
+                        {r.service}
+                      </div>
+                      <div className="mt-0.5 text-sm text-ink-muted">
+                        {r.detail}
+                      </div>
+                    </div>
+
+                    <div className="sm:col-span-3 sm:block sm:text-right">
+                      <span>
+                        <span className="text-xl font-semibold tabular text-foreground">
+                          {r.standard}
                         </span>
+                        {r.unit && (
+                          <span className="ml-1 text-xs text-ink-muted">
+                            {r.unit}
+                          </span>
+                        )}
                       </span>
-                    ) : (
-                      <span className="text-sm text-ink-muted">—</span>
-                    )}
+                    </div>
+
+                    <div className="sm:col-span-3 sm:block sm:text-right">
+                      {r.urgent ? (
+                        <span>
+                          <span className="text-xl font-semibold tabular text-accent">
+                            {r.urgent}
+                          </span>
+                          <span className="ml-1 text-xs text-ink-muted">
+                            {r.unit}
+                          </span>
+                        </span>
+                      ) : (
+                        <span className="text-sm text-ink-muted">—</span>
+                      )}
+                    </div>
                   </div>
                 </Item>
               ))}
             </RevealGroup>
+
+            {/* Footnotes — mobile (< 640px): tucked inside the card */}
+            <div className="space-y-2 bg-secondary/40 px-5 py-4 sm:hidden">
+              {notes.map((n, i) => (
+                <p
+                  key={i}
+                  className="flex gap-1.5 text-xs leading-relaxed text-ink-muted"
+                >
+                  <span className="shrink-0 text-accent">*</span>
+                  <span>{n}</span>
+                </p>
+              ))}
+            </div>
           </div>
         </Reveal>
 
         <Reveal>
-          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="mt-10 hidden grid-cols-1 gap-6 sm:grid md:grid-cols-3">
             {notes.map((n, i) => (
               <div
                 key={i}
