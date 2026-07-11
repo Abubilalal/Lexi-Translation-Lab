@@ -62,7 +62,7 @@ export function FinalCTA() {
                   </p>
                 </div>
                 <a
-                  href="https://wa.me/918368699442?text=Hi%20Lexi%20Lab%2C%20I%20need%20a%20translation%20quote.%20Please%20get%20in%20touch."
+                  href="https://wa.me/918368699442?text=Hi,%20I%20am%20contacting%20through%20lexilab.in."
                   onClick={() => track("whatsapp_click", { source: "final_cta" })}
                   target="_blank"
                   rel="noopener noreferrer"
