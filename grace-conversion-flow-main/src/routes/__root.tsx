@@ -96,6 +96,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "application/ld+json",
         children: JSON.stringify(localBusinessJsonLd()),
       },
+  	  {
+    	async: true,
+    	src: "https://www.googletagmanager.com/gtag/js?id=G-51X3LJ1DEE",
+  	  },
+  	  {
+    	children: `
+      	 window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+      	 gtag('js', new Date());
+      	 gtag('config', 'G-51X3LJ1DEE');
+    	`,
+  	  },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
