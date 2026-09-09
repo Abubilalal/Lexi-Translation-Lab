@@ -48,7 +48,7 @@ export function Hero() {
             transition={{ duration: 0.7, ease, delay: 0.15 }}
             className="mt-7 max-w-2xl text-pretty text-lg leading-relaxed text-ink-muted sm:text-xl"
           >
-            Professional Hindi ↔ English translation, document typing, transcription, 
+            Professional Hindi, Punjabi, Marathi & Gujarati ↔ English translation, document typing, transcription, 
             and litigation support services. We assist advocates, law firms, businesses, media organizations, and individuals with accurate document handling and language services.
           </motion.p>
 
