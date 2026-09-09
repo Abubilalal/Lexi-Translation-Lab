@@ -10,6 +10,13 @@ const rates = [
     unit: "per page",
   },
   {
+    service: "Document Translation",
+    detail: "Punjabi, Marathi & Gujarati ↔ English",
+    standard: "₹90",
+    urgent: "₹130",
+    unit: "per page",
+  },
+  {
     service: "Document True Typing",
     detail: "English",
     standard: "₹20",
