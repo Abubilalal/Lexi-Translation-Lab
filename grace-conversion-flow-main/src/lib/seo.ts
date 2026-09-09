@@ -30,6 +30,10 @@ export const faqs: { q: string; a: string }[] = [
     a: "No. We specialize exclusively in translation services and do not provide notarization. We recommend consulting a licensed notary independently if your documents require it.",
   },
   {
+    q: "Which other languages do you support besides Hindi?",
+    a: "Alongside Hindi ↔ English, we also offer Punjabi, Marathi, and Gujarati ↔ English translation for legal, corporate, and general documents — priced at ₹90/page (₹130/page urgent).",
+  },
+  {
     q: "What happens if there's an error in the translation after delivery?",
     a: "We offer a free revision guarantee. If any inaccuracy is identified post-delivery, we will correct it within 24 hours at no additional cost.",
   },
