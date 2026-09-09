@@ -40,7 +40,7 @@ export function Footer() {
               </span>
             </div>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-ink-muted">
-              Hindi ↔ English translation, document typing, transcription, and litigation support services.
+              Hindi, Punjabi, Marathi & Gujarati ↔ English translation, document typing, transcription, and litigation support services.
             </p>
             <p className="mt-6 font-mono text-[11px] uppercase tracking-widest text-ink-muted">
               New Delhi · Remote, 24/7
