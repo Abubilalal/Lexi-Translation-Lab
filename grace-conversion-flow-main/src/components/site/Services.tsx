@@ -4,29 +4,17 @@ const services = [
   {
     n: "01",
     title: "Document Translation",
-    desc: "Hindi ↔ English translation for legal notices, agreements, affidavits, contracts, business correspondence, and general documents.",
+    desc: "Translation for legal notices, agreements, affidavits, contracts, business correspondence, and general documents — Hindi, Punjabi, Marathi & Gujarati ↔ English.",
     bullets: [
       "Legal & corporate documents",
       "Human-reviewed translations",
       "Word & PDF delivery",
     ],
-    meta: "₹60 / page",
-    metaLabel: "Hindi ↔ English · ₹100/page urgent (24-48 hr)",
+    meta: "₹60–90 / page",
+    metaLabel: "Hindi ₹60/page · Punjabi, Marathi & Gujarati ₹90/page",
   },
   {
     n: "02",
-    title: "Regional Language Translation",
-    desc: "Punjabi, Marathi & Gujarati ↔ English translation for legal notices, agreements, affidavits, contracts, business correspondence, and general documents.",
-    bullets: [
-      "Legal & corporate documents",
-      "Human-reviewed translations",
-      "Word & PDF delivery",
-    ],
-    meta: "₹90 / page",
-    metaLabel: "Punjabi · Marathi · Gujarati ↔ English · ₹130/page urgent (24-48 hr)",
-  },
-  {
-    n: "03",
     title: "True-Type",
     desc: "Typing and formatting of handwritten, scanned, and printed documents in Hindi and English.",
     bullets: [
@@ -38,7 +26,7 @@ const services = [
     metaLabel: "English ₹20 · Hindi ₹30 per page",
   },
   {
-    n: "04",
+    n: "03",
     title: "Audio & Video Transcription",
     desc: "Conversion of Hindi and English recordings into editable text documents",
     bullets: [
