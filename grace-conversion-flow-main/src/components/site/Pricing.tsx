@@ -6,7 +6,7 @@ const rates = [
     service: "Document Translation",
     detail: "Hindi ↔ English",
     standard: "₹60",
-    urgent: "₹100",
+    urgent: "₹90",
     unit: "per page",
   },
   {
